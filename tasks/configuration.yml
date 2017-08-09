@@ -85,7 +85,7 @@
       option: memcached_servers
       value: '{{ openstack_glance_keystone_hostname }}:11211'
     - section: keystone_authtoken
-      option: admin_tenant_name
+      option: project_name
       value: service
     - section: keystone_authtoken
       option: auth_type
@@ -121,12 +121,6 @@
     - section: database
       option: connection
       value: '{{ openstack_glance_database_url }}'
-    - section: keystone_authtoken
-      option: identity_uri
-      value: >-
-        {{- openstack_glance_keystone_protocol }}://
-        {{- openstack_glance_keystone_hostname }}:
-        {{- openstack_glance_keystone_admin_port }}
     - section: keystone_authtoken
       option: auth_uri
       value: >-
